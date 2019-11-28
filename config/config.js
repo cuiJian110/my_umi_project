@@ -16,7 +16,11 @@ export default {
                 {path: "jiankong", component: "jiankong"},
                 {path: "gongzuotai", component: "gongzuotai"},
                 {path: "kapian", component: "kapian"}
+            ]},
+            {path: "/peizhipingtai", routes: [
+                {path: "table", component: "tablepage"},
             ]}
+
         ]},
     ],
     plugins: [
@@ -24,5 +28,11 @@ export default {
             antd: true,
             dva: true
         }]
-    ]
+    ],
+    proxy: {
+      '/dev': {
+        target: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com',
+        changeOrigin: true,
+      },
+    }
 }
