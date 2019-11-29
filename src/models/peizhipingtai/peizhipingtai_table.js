@@ -64,26 +64,33 @@ export default {
           ], 
         data_source: [
             {
-              key: '1',
+              key: 1,
               name: '111John Brown',
               age: 32,
               address: 'New York No. 1 Lake Park',
               hobby: ['nice', 'developer'],
             },
             {
-              key: '2',
+              key: 2,
               name: '222Jim Green',
               age: 42,
               address: 'London No. 1 Lake Park',
               hobby: ['loser'],
             },
             {
-              key: '3',
+              key: 3,
               name: '333Joe Black',
               age: 32,
               address: 'Sidney No. 1 Lake Park',
               hobby: ['cool', 'teacher'],
             },
           ]
+    },
+    reducers: {
+        addItem(state, actions) {
+          const cn = JSON.parse(JSON.stringify(state));
+          cn.data_source.push(actions.item);
+          return cn;
+        }
     }
 }

@@ -8,6 +8,12 @@ export default {
         {path: "/page3", component: "../layout/index_02.jsx", routes: [
             {path: "page3", component: "page3"}
         ]},
+        //  不在左侧菜单中的页面，由于只能存在一个"/"路径所以用"/o"表示
+        {path: "/o", component: "../layout/layout_home", routes: [
+            {path: "home", component: "home"}
+        ]},
+        //  "/"必须在最后一个才可以使用多个layout
+        //  在左侧菜单中的页面
         {path: "/", component: "../layout/layout_home", routes: [
             {path: "/", component: "./hellowWorld"},
             {path: "/helloworld", component: "./hellowWorld"},
@@ -20,7 +26,6 @@ export default {
             {path: "/peizhipingtai", routes: [
                 {path: "table", component: "tablepage"},
             ]}
-
         ]},
     ],
     plugins: [
