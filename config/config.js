@@ -1,6 +1,15 @@
+/*
+ * @Description: 
+ * @Autor: cuiJian
+ * @Date: 2019-11-27 09:54:17
+ * @LastEditors: cuiJian
+ * @LastEditTime: 2019-12-12 17:49:57
+ */
 
 export default {
     routes: [
+        {path: "/login", component: "login"},
+        {path: "/page4", component: "../layout"},
         {path: "/page1", component: "../layout", routes: [
             {path: "page1", component: "page1"},
             {path: "page2", component: "page2"}
@@ -16,6 +25,9 @@ export default {
         //  在左侧菜单中的页面
         {path: "/", component: "../layout/layout_home", routes: [
             {path: "/", component: "./hellowWorld"},
+            // 不在左侧菜单的页面，
+            {path: "/userCenter", component: "userCenter"},
+            // 左侧菜单有的菜单
             {path: "/helloworld", component: "./hellowWorld"},
             {path: "/dashboard", routes: [
                 {path: "fenxi", component: "fenxi"},
